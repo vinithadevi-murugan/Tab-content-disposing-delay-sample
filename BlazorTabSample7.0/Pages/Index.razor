@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<TabSet>
+    <Tab Title="First tab">
+       <FetchData></FetchData>
+    </Tab>
+
+    @if (showSecondTab)
+    {
+        <Tab Title="Second">
+            <h4>Second tab</h4>
+            You can toggle me.
+        </Tab>
+    }
+
+    <Tab Title="Third">
+        <h4>Third tab</h4>
+
+        <label>
+            <input type="checkbox" bind=@showSecondTab />
+            Toggle second tab
+        </label>
+        <FetchData></FetchData>
+    </Tab>
+</TabSet>
+
+@functions
+{
+    bool showSecondTab;
+}
